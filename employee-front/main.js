@@ -12,12 +12,12 @@ function searchEmployee() {
 function getAllEmployees() {
     console.log("Fetching all employees...");
     fetch("http://127.0.0.1:8080/api/v1/employee")
-        .then(response => response.json())
+        .then(response => response.json()|| console.log(response))
         .then(data => displayEmployees(data.data))
         .catch(error => showError());
 }
 
-function showError() {
+function showError(msg = '') {
     var errorMessage = document.getElementById("error-message");
     errorMessage.style.display = "block";
 }
@@ -32,7 +32,7 @@ function getEmployeeById(employeeId) {
             return response.json();
         })
         .then(data => displayEmployees([data.data]))
-        .catch(error => showError());
+        .catch(error => showError("Employee not found."));
 }
 
 // Función para mostrar la lista de empleados en la página
@@ -63,7 +63,7 @@ function displayEmployees(employees) {
                 <td>${employee.employee_salary}</td>
                 <td>${employee.employee_age}</td>
                 <td>${employee.profile_image}</td>
-                <td>${calculateAnnualSalary(employee.employee_salary)}</td>
+                <td>${employee.employee_salary}</td>
             `;
             table.appendChild(row);
         });
@@ -72,10 +72,5 @@ function displayEmployees(employees) {
     }
 }
 
-// Función para calcular el salario anual
-function calculateAnnualSalary(monthlySalary) {
-    return monthlySalary * 12;
-}
 
-// Obtener todos los empleados al cargar la página
 getAllEmployees();
