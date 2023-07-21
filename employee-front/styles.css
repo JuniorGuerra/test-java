@@ -1,0 +1,76 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  h1 {
+    color: #333;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  /* Estilos específicos */
+  header {
+    background-color: #4CAF50;
+    padding: 10px;
+    color: #fff;
+    text-align: center;
+  }
+  
+  button {
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }
+  
+  .employee-search {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .employee-search input[type="text"] {
+    flex: 1;
+    padding: 10px;
+  }
+  
+  .employee-list-container {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+  
+  .employee-list {
+    width: 100%;
+  }
+  
+  .employee-list tr:hover {
+    background-color: #f2f2f2;
+  }
+  
+  
